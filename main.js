@@ -25,7 +25,7 @@ function draw() {
 	fill(0, 100, 0);
 	rect(px, px, (horz-2)*px, (vert-6)*px);
 	rect(px, (vert-4)*px, (horz-2)*px, 3*px);
-	if(food.createFruit){
+	if(food.createFood){
 		food.update();
 	}
 	if(snake.ate(food)){
