@@ -6,7 +6,9 @@ var yDown = null;
 
 function handleTouchStart(evt) {           
     xDown = evt.touches[0].clientX;                                      
-    yDown = evt.touches[0].clientY;                                      
+    yDown = evt.touches[0].clientY;    	
+	if(snake.dead)
+			reset();
 };                                                
 
 function handleTouchMove(evt) {
@@ -33,11 +35,11 @@ function handleTouchMove(evt) {
     } else {
         if ( yDiff > 0 ) {
             /* up swipe */ 
-			if(snake.directionPower || snake.direction != D)
+			if(snake.directionPower || snake.direction != U)
 				snake.direction=D;
         } else { 
             /* down swipe */
-			if(snake.directionPower || snake.direction != U)
+			if(snake.directionPower || snake.direction != D)
 				snake.direction=U;
         }                                                                 
     }
