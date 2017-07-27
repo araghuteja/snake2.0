@@ -2,7 +2,7 @@
  * 
  */
 var snake, food, colour, reversePower;
-var px = 20, horz = 60, vert = 45, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
+var px, horz, vert, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
 const L=1, R=2, D=4, U=8;
 
 function reset(){ 
@@ -15,6 +15,10 @@ function reset(){
 }
 
 function setup() {
+	if(self.innerWidth > self.innerHeight)
+		px = self.innerHeight/45, horz = self.innerWidth/px, vert = 45
+	else
+		px = self.innerWidth/60, horz = 60, vert = self.innerHeight/px
 	createCanvas(horz * px, vert * px);
 	noStroke();
 	frameRate(10);
