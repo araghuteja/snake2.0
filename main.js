@@ -6,6 +6,10 @@ var px = 20, horz = 60, vert = 45, scoreText = 'SCORE :', deadText = "Dead :'( \
 const L=1, R=2, D=4, U=8;
 
 function reset(){
+	if(horz < vert){
+		vert = horz;
+		hroz = 45;
+	}
 	console.log("Reset");
 	snake = new Snake();
 	food = new Food();
