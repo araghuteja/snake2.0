@@ -6,7 +6,7 @@ var px, horz, vert, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try A
 const L=1, R=2, D=4, U=8;
 
 function reset(){ 
-	console.log("Reset");
+	console.log(px);
 	snake = new Snake();
 	food = new Food();
 	colour = new Colour();
@@ -16,12 +16,12 @@ function reset(){
 
 function setup() {
 	if(self.innerWidth > self.innerHeight)
-		px = self.innerHeight/45, horz = self.innerWidth/px, vert = 45
+		px = self.innerHeight/45, horz = self.innerWidth/px, vert = 45-2
 	else
-		px = self.innerWidth/60, horz = 60, vert = self.innerHeight/px
+		px = self.innerWidth/60, horz = 60, vert = self.innerHeight/px-2
 	createCanvas(horz * px, vert * px);
 	noStroke();
-	frameRate(horz/10);
+	frameRate(15);
 	reset();
 	textAlign(RIGHT);
 }
