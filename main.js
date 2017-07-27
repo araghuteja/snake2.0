@@ -2,25 +2,21 @@
  * 
  */
 var snake, food, colour, reversePower;
-var px, horz, vert, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
+var px = 20, horz = 60, vert = 45, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
 const L=1, R=2, D=4, U=8;
 
-function reset(){ 
-	console.log(px);
+function reset(){
+	console.log("Reset");
 	snake = new Snake();
 	food = new Food();
 	colour = new Colour();
 	reversePower = new ReversePower();
-	console.log(self.innerWidth +" - "+ document.documentElement.clientWidth +" - "+ document.body.clientWidth +" - "+ self.innerWidth );
 }
 
 function setup() {
-	if(self.innerWidth > self.innerHeight)
-		px = Math.round(self.innerHeight/45), horz = Math.round(self.innerWidth/px), vert = 45-2, frameRate(10);
-	else
-		px = Math.round(self.innerWidth/60), horz = 60, vert = Math.round(self.innerHeight/px)-2, frameRate(30)
 	createCanvas(horz * px, vert * px);
 	noStroke();
+	frameRate(10);
 	reset();
 	textAlign(RIGHT);
 }
@@ -34,7 +30,6 @@ function draw() {
 	fill(0, 100, 0);
 	rect(px, px, (horz-2)*px, (vert-6)*px);
 	rect(px, (vert-4)*px, (horz-2)*px, 3*px);
-	fill(0);
 	if(food.createFood){
 		food.update();
 	}
@@ -74,4 +69,3 @@ function keyPressed() {
 		snake.direction=U;
 	}
 }
-
