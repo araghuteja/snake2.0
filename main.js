@@ -16,12 +16,11 @@ function reset(){
 
 function setup() {
 	if(self.innerWidth > self.innerHeight)
-		px = self.innerHeight/45, horz = self.innerWidth/px, vert = 45-2
+		px = Math.round(self.innerHeight/45), horz = Math.round(self.innerWidth/px), vert = 45-2, frameRate(10);
 	else
-		px = self.innerWidth/60, horz = 60, vert = self.innerHeight/px-2
+		px = Math.round(self.innerWidth/60), horz = 60, vert = Math.round(self.innerHeight/px)-2, frameRate(30)
 	createCanvas(horz * px, vert * px);
 	noStroke();
-	frameRate(15);
 	reset();
 	textAlign(RIGHT);
 }
