@@ -15,7 +15,6 @@ function reset(){
 	food = new Food();
 	colour = new Colour();
 	reversePower = new ReversePower();
-	console.log(self.innerWidth +" - "+ self.innerHeight);
 }
 
 function setup() {
@@ -35,8 +34,6 @@ function draw() {
 	fill(0, 100, 0);
 	rect(px, px, (horz-2)*px, (vert-6)*px);
 	rect(px, (vert-4)*px, (horz-2)*px, 3*px);
-	fill(0);
-	text(screen.width + " x " + screen.height, 11*px, (2)*px);
 	if(food.createFood){
 		food.update();
 	}
