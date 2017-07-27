@@ -2,14 +2,10 @@
  * 
  */
 var snake, food, colour, reversePower;
-var scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
+var var px = 20, horz = 60, vert = 45, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
 const L=1, R=2, D=4, U=8;
 
 function reset(){
-	if(horz > vert)
-		var px = self.innerHeight/45, horz = self.innerWidth/px, vert = 45;
-	else
-		var px = self.innerHeight/60, horz = 60, vert = self.innerHeight/px;
 	console.log("Reset");
 	snake = new Snake();
 	food = new Food();
