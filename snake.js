@@ -13,7 +13,7 @@ function Snake() {
 	this.posArray.push(this.pos);	
 	
 	this.overlap = function(){
-			if(this.pos.x==horz-1 || this.pos.y==vert-5 || this.pos.x==0 || this.pos.y==0)
+			if(this.pos.x>=horz-1 || this.pos.y>=vert-5 || this.pos.x<=0 || this.pos.y<=0)
 				return false;
 			return true;
 	}

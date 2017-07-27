@@ -21,7 +21,7 @@ function setup() {
 		px = self.innerWidth/60, horz = 60, vert = self.innerHeight/px
 	createCanvas(horz * px, vert * px);
 	noStroke();
-	frameRate(10);
+	frameRate(horz/10);
 	reset();
 	textAlign(RIGHT);
 }
