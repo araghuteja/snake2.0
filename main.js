@@ -2,10 +2,11 @@
  * 
  */
 var snake, food, colour, reversePower;
+
 var px = 20, horz = 60, vert = 45, scoreText = 'SCORE :', deadText = "Dead :'( \nClick to Try Again";
 const L=1, R=2, D=4, U=8;
 
-function reset(){ 
+function reset(){
 	console.log("Reset");
 	snake = new Snake();
 	food = new Food();
